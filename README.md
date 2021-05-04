@@ -133,4 +133,4 @@ While some of them exactly match your needs, some others might be missing or you
 For these reasons you may create your own snippets to increase your productivity.
 Open the Command Palette (`CMD + Maj + P`) and type `Configure User Snippets`, you can then choose to create language-specific snippets or create generic snippets that can be triggered in different scopes.
 
-The file [`guilgautier.code-snippets`](#guilgautier.code-snippets) contains some snippets I frequently use and find very convenient.
+The file [`guilgautier.code-snippets`](./guilgautier.code-snippets) contains some snippets I frequently use and find very convenient.
