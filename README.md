@@ -12,6 +12,7 @@
     - [Jupyter notebooks](#jupyter-notebooks)
     - [Python](#python)
     - [Julia](#julia)
+  - [Snippets](#snippets)
 
 <!-- /TOC -->
 
@@ -121,3 +122,15 @@ A good [Julia](https://julialang.org/) code setup ease your coding experience an
 - https://marketplace.visualstudio.com/items?itemName=cameronbieganek.julia-color-themes
 - https://marketplace.visualstudio.com/items?itemName=colinfang.markdown-julia
 - https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml
+
+## Snippets
+
+> [Code snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets) are templates that make it easier to enter repeating code patterns, such as loops or conditional-statements.
+
+Many language-specific [extensions](#extensions) already provide some useful snippets.
+While some of them exactly match your needs, some others might be missing or you may not remember how to trigger them.
+
+For these reasons you may create your own snippets to increase your productivity.
+Open the Command Palette (`CMD + Maj + P`) and type `Configure User Snippets`, you can then choose to create language-specific snippets or create generic snippets that can be triggered in different scopes.
+
+The file [`guilgautier.code-snippets`](#guilgautier.code-snippets) contains some snippets I frequently use and find very convenient.
