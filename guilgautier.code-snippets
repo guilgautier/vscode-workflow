@@ -130,7 +130,7 @@
         "prefix": "codeblock",
         "body": [
             "```${1:language}",
-            "\t${TM_SELECTED_TEXT}",
+            "\t${TM_SELECTED_TEXT}$2",
             "```",
             "\n$0"
         ],
