@@ -1169,7 +1169,7 @@
         "scope": "python,rst",
         "prefix": "link",
         "body": [
-            "`$1 <$2>`_$0"
+            "`${TM_SELECTED_TEXT:text} <${1:link}>`_$0"
         ]
     },
     // admonitions
@@ -1318,7 +1318,7 @@
     },
     "[]()": {
         "scope": "julia,markdown",
-        "prefix": "url",
+        "prefix": "link",
         "body": [
             "[${TM_SELECTED_TEXT:text}](${1:link})$0"
         ],
@@ -1328,7 +1328,7 @@
         "scope": "julia,markdown",
         "prefix": "image",
         "body": [
-            "![${1:alternative text}](${2:link/to/image.png})$0"
+            "![${TM_SELECTED_TEXT:text}](${1:image.png})$0"
         ],
         "description": ""
     },
