@@ -1,0 +1,133 @@
+// View->Command palette->Open Settings (JSON)
+{
+    "breadcrumbs.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    // Explorer
+    "explorer.sortOrder": "type",
+    // Workbench
+    "workbench.activityBar.visible": true,
+    "workbench.colorTheme": "Julia (Monokai Classic)",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "workbench.sideBar.location": "right",
+    "workbench.statusBar.visible": true,
+    "window.openFilesInNewWindow": "off",
+    // Files
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    // Editor
+    "editor.codeActionsOnSave": null,
+    "editor.detectIndentation": true,
+    "editor.fontSize": 13,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.insertSpaces": true,
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "none",
+    "editor.snippetSuggestions": "top",
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 4,
+    "editor.tokenColorCustomizations": null,
+    "editor.wordWrap": "bounded",
+    "editor.quickSuggestions": { // Controls if quick suggestions should show up while typing
+        "comments": false,
+        "other": true,
+        "strings": true
+    },
+    // Terminal
+    "terminal.integrated.inheritEnv": false,
+    "terminal.integrated.rendererType": "auto",
+    // Intellicode
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    // Python
+    "[python]": {
+        "editor.insertSpaces": true,
+        "editor.rulers": [
+            {
+                "column": 80,
+                "color": "#ff00FF"
+            },
+            100, // <- a ruler in the default color or as customized at column 0
+            {
+                "column": 120,
+                "color": "#ff0000"
+            },
+        ],
+        "editor.tabSize": 4,
+        "editor.wordWrapColumn": 80,
+    },
+    "python.languageServer": "Pylance",
+    "python.condaPath": "/Users/ggautier/opt/anaconda3/bin/anaconda",
+    "python.pythonPath": "/Users/ggautier/opt/anaconda3/bin/python",
+    "python.defaultInterpreterPath": "/Users/ggautier/opt/anaconda3/bin/python",
+    "python.experiments.optInto": [],
+    "python.formatting.provider": "black",
+    "pythonIndent.trimLinesWithOnlyWhitespace": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.lintOnSave": true,
+    "python.showStartPage": false,
+    "python.terminal.activateEnvironment": false,
+    "autoDocstring.docstringFormat": "sphinx",
+    // Jupyter
+    "jupyter.alwaysTrustNotebooks": true,
+    "jupyter.askForKernelRestart": false,
+    // Markdown
+    "[markdown]": {
+        "editor.tabSize": 2,
+        "editor.quickSuggestions": true,
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    // TOML
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+    // LaTeX
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.chktex.enabled": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.bibtex-format.tab": "4 spaces",
+    "latex-workshop.bibtex-format.trailingComma": true,
+    "latex-workshop.bibtex-format.sort.enabled": true,
+    "latex-workshop.bibtex-fields.sort.enabled": true,
+    // Julia
+    "[julia]": {
+        "editor.tabSize": 4,
+        "editor.wordWrapColumn": 92,
+        "editor.rulers": [
+            {
+                "column": 92,
+                "color": "#ff00FF"
+            },
+            100, // <- a ruler in the default color or as customized at column 0
+            {
+                "column": 120,
+                "color": "#ff0000"
+            },
+        ],
+        "editor.defaultFormatter": "singularitti.vscode-julia-formatter",
+    },
+    // Following https://github.com/invenia/BlueStyle#code-formatting
+    "julia.execution.codeInREPL": true,
+    "julia.executablePath": "/usr/local/bin/julia",
+    "julia.enableTelemetry": true,
+    "julia.environmentPath": "",
+    "julia.format.keywords": null,
+    "julia.enableCrashReporter": true,
+    "julia.additionalArgs": [],
+    // GitHub Pull requests and Issues
+    "githubPullRequests.fileListLayout": "flat",
+    "diffEditor.renderSideBySide": false,
+    // Spell checker
+    "cSpell.enabled": true,
+    "cSpell.language": "en,fr",
+}
