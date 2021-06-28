@@ -143,7 +143,7 @@
         "scope": "latex",
         "prefix": "cite",
         "body": [
-            "\\${1|text,paren|}cite[${2:pre,}][${3:post}]"
+            "\\\\${1|text,paren|}cite[${2:pre,}][${3:post}]"
         ],
         "description": ""
     },
