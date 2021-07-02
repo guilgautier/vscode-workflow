@@ -125,8 +125,8 @@
             "*${TM_SELECTED_TEXT}$1*$0"
         ]
     },
-    "codeblock": {
-        "scope": "python,rst,julia,markdown",
+    "```language  ```": {
+        "scope": "julia,markdown",
         "prefix": "codeblock",
         "body": [
             "```${1:language}",
@@ -832,7 +832,7 @@
             "import"
         ],
         "body": [
-            "import ${0:module}"
+            "import ${1:module} ${2:as ${3:alias}}$0"
         ],
         "description": ""
     },
@@ -850,7 +850,7 @@
         "scope": "python",
         "prefix": [
             "def",
-            "function"
+            "deffunction"
         ],
         "body": [
             "def ${1:function_name}(${2:args}):",
@@ -863,9 +863,9 @@
         "prefix": "class",
         "body": [
             "class ${1:ClassName}(${2:object}):",
-            "\tdef __init__(self, ${4:arg}):",
-            "\t\t${5:super($1, self).__init__()}",
-            "\t\tself.$4 = $4",
+            "\tdef __init__(self, ${3:arg}):",
+            "\t\t${4:super($1, self).__init__()}",
+            "\t\tself.$3 = $3",
             "\t\t$0"
         ],
         "description": ""
@@ -873,8 +873,8 @@
     "def class method": {
         "scope": "python",
         "prefix": [
-            "def",
             "method"
+            "defmethod",
         ],
         "body": [
             "def ${1:function_name}(self, ${2:args}):",
@@ -882,10 +882,11 @@
         ],
         "description": ""
     },
-    "@staticmethod": {
+    "@staticmethod def": {
         "scope": "python",
         "prefix": [
             "staticmethod",
+            "defstaticmethod",
         ],
         "body": [
             "@staticmethod",
@@ -894,10 +895,11 @@
         ],
         "description": ""
     },
-    "@property": {
+    "@property def": {
         "scope": "python",
         "prefix": [
             "property",
+            "defproperty",
         ],
         "body": [
             "@property",
@@ -1058,6 +1060,8 @@
         "prefix": "definit",
         "body": [
             "def __init__(self, ${1:args}):",
+            "\t${3:super().__init__()}",
+            "\tself.$1 = $1",
             "\t$0"
         ],
         "description": ""
@@ -1084,11 +1088,18 @@
         ],
         "description": ""
     },
-    ":py:meth:": {
+    ":py:attr:": {
         "scope": "python,rst",
-        "prefix": "pymeth",
+        "prefix": "pyattr",
         "body": [
-            ":py:meth:`${TM_SELECTED_TEXT}$1`$0"
+            ":py:attr:`${TM_SELECTED_TEXT}$1`$0"
+        ]
+    },
+    ":py:class:": {
+        "scope": "python,rst",
+        "prefix": "pyclass",
+        "body": [
+            ":py:class:`${TM_SELECTED_TEXT}$1`$0"
         ]
     },
     ":py:func:": {
@@ -1098,11 +1109,11 @@
             ":py:func:`${TM_SELECTED_TEXT}$1`$0"
         ]
     },
-    ":py:class:": {
+    ":py:meth:": {
         "scope": "python,rst",
-        "prefix": "pyclass",
+        "prefix": "pymeth",
         "body": [
-            ":py:class:`${TM_SELECTED_TEXT}$1`$0"
+            ":py:meth:`${TM_SELECTED_TEXT}$1`$0"
         ]
     },
     ":retrun:": {
@@ -1172,8 +1183,8 @@
             "`${TM_SELECTED_TEXT:text} <${1:link}>`_$0"
         ]
     },
-    // admonitions
-    ".. attention:: admonition": {
+    // directives https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html
+    ".. attention::": {
         "scope": "python,rst",
         "prefix": "attention",
         "body": [
@@ -1182,7 +1193,7 @@
         ],
         "description": ""
     },
-    ".. caution:: admonition": {
+    ".. caution::": {
         "scope": "python,rst",
         "prefix": "caution",
         "body": [
@@ -1191,7 +1202,21 @@
         ],
         "description": ""
     },
-    ".. danger:: admonition": {
+    ".. code-block::": {
+        "scope": "python,rst",
+        "prefix": "code-block",
+        "body": [
+            ".. code-block:: python",
+            "\t:caption: this.py",
+            "\t:name: this-py",
+            "\t:linenos:",
+            "\t:linenos-start: 0",
+            "\t:emphasize-lines:",
+            "\n\t${TM_SELECTED_TEXT}$0"
+        ],
+        "description": ""
+    },
+    ".. danger::": {
         "scope": "python,rst",
         "prefix": "danger",
         "body": [
@@ -1200,7 +1225,7 @@
         ],
         "description": ""
     },
-    ".. error:: admonition": {
+    ".. error::": {
         "scope": "python,rst",
         "prefix": "error",
         "body": [
@@ -1209,7 +1234,7 @@
         ],
         "description": ""
     },
-    ".. hint:: admonition": {
+    ".. hint::": {
         "scope": "python,rst",
         "prefix": "hint",
         "body": [
@@ -1218,7 +1243,7 @@
         ],
         "description": ""
     },
-    ".. important:: admonition": {
+    ".. important::": {
         "scope": "python,rst",
         "prefix": "important",
         "body": [
@@ -1227,7 +1252,21 @@
         ],
         "description": ""
     },
-    ".. math:: admonition": {
+    ".. literalinclude:: file.py": {
+        "scope": "python,rst",
+        "prefix": "literalinclude",
+        "body": [
+            ".. literalinclude:: file.py",
+            "\t:lines: 1-",
+            "\t:caption: this.py",
+            "\t:name: this-py",
+            "\t:linenos:",
+            "\t:linenos-start: 0",
+            "\t:emphasize-lines:",
+        ],
+        "description": ""
+    },
+    ".. math::": {
         "scope": "python,rst",
         "prefix": "math",
         "body": [
@@ -1236,7 +1275,7 @@
         ],
         "description": ""
     },
-    ".. note:: admonition": {
+    ".. note::": {
         "scope": "python,rst",
         "prefix": "note",
         "body": [
@@ -1245,7 +1284,7 @@
         ],
         "description": ""
     },
-    ".. seealso:: admonition": {
+    ".. seealso::": {
         "scope": "python,rst",
         "prefix": "seealso",
         "body": [
@@ -1254,7 +1293,7 @@
         ],
         "description": ""
     },
-    ".. tip:: admonition": {
+    ".. tip::": {
         "scope": "python,rst",
         "prefix": "tip",
         "body": [
@@ -1263,7 +1302,7 @@
         ],
         "description": ""
     },
-    ".. todo:: admonition": {
+    ".. todo::": {
         "scope": "python,rst",
         "prefix": "todo",
         "body": [
@@ -1272,7 +1311,7 @@
         ],
         "description": ""
     },
-    ".. warning:: admonition": {
+    ".. warning::": {
         "scope": "python,rst",
         "prefix": "warning",
         "body": [
@@ -1413,7 +1452,7 @@
         "description": ""
     },
     // Admonitions
-    "attention": {
+    "!!! attention": {
         "scope": "julia,markdown",
         "prefix": "attention",
         "body": [
@@ -1423,7 +1462,7 @@
         ],
         "description": ""
     },
-    "caution": {
+    "!!! caution": {
         "scope": "julia,markdown",
         "prefix": "caution",
         "body": [
@@ -1433,7 +1472,7 @@
         ],
         "description": ""
     },
-    "danger": {
+    "!!! danger": {
         "scope": "julia,markdown",
         "prefix": "danger",
         "body": [
@@ -1443,7 +1482,7 @@
         ],
         "description": ""
     },
-    "error": {
+    "!!! error": {
         "scope": "julia,markdown",
         "prefix": "error",
         "body": [
@@ -1453,7 +1492,7 @@
         ],
         "description": ""
     },
-    "hint": {
+    "!!! hint": {
         "scope": "julia,markdown",
         "prefix": "hint",
         "body": [
@@ -1463,7 +1502,7 @@
         ],
         "description": ""
     },
-    "info": {
+    "!!! info": {
         "scope": "julia,markdown",
         "prefix": "info",
         "body": [
@@ -1473,7 +1512,7 @@
         ],
         "description": ""
     },
-    "important": {
+    "!!! important": {
         "scope": "julia,markdown",
         "prefix": "important",
         "body": [
@@ -1483,7 +1522,7 @@
         ],
         "description": ""
     },
-    "note": {
+    "!!! note": {
         "scope": "julia,markdown",
         "prefix": "note",
         "body": [
@@ -1493,7 +1532,7 @@
         ],
         "description": ""
     },
-    "seealso": {
+    "!!! seealso": {
         "scope": "julia,markdown",
         "prefix": "seealso",
         "body": [
@@ -1503,7 +1542,7 @@
         ],
         "description": ""
     },
-    "tip": {
+    "!!! tip": {
         "scope": "julia,markdown",
         "prefix": "tip",
         "body": [
@@ -1513,7 +1552,7 @@
         ],
         "description": ""
     },
-    "todo": {
+    "!!! todo": {
         "scope": "julia,markdown",
         "prefix": "todo",
         "body": [
@@ -1523,7 +1562,7 @@
         ],
         "description": ""
     },
-    "warning": {
+    "!!! warning": {
         "scope": "julia,markdown",
         "prefix": "warning",
         "body": [
