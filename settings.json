@@ -82,10 +82,12 @@
     "jupyter.alwaysTrustNotebooks": true,
     "jupyter.askForKernelRestart": false,
     // Markdown
+    "markdownFormatter.codeAreaToBlock": "",
+    "markdownFormatter.fullWidthTurnHalfWidth": "auto",
     "[markdown]": {
         "editor.tabSize": 2,
         "editor.quickSuggestions": true,
-        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+        "editor.defaultFormatter": "mervin.markdown-formatter"
     },
     // TOML
     "[toml]": {
