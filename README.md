@@ -205,4 +205,10 @@ The file [ `guilgautier.code-snippets` ](./guilgautier.code-snippets) contains s
 
 ## Settings
 
-Open the Command Palette ( `CMD + Maj + P` ) and type `Open Settings (JSON)` , you can then choose to create language-specific snippets or create generic snippets that can be triggered in different scopes.
+> [VSCode settings](https://code.visualstudio.com/docs/getstarted/settings) You can configure Visual Studio Code to your liking through its various settings. Nearly every part of VS Code's editor, user interface, and functional behavior has options you can modify.
+
+To edit your personal setting, open the Command Palette ( `CMD + Maj + P` ) and type `Open Settings (JSON)` .
+
+The file [ `settings.json` ](./settings.json) contains my favorite settings.
+
+You may also consider [synchronizing your settings](https://code.visualstudio.com/docs/editor/settings-sync), in order to keep the same setup each time you log in VS Code (from a different machine for example).
