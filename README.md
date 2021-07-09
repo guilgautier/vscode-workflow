@@ -13,6 +13,7 @@
     - [Python](#python)
     - [Julia](#julia)
   - [Snippets](#snippets)
+  - [Settings](#settings)
 
 <!-- /TOC -->
 
@@ -32,8 +33,6 @@ To install the the extensions listed and detailed in the next sections you can e
   code --install-extension <extension-name>
 ```
 
-sdasd | title | title
-
 ### General
 
 * https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode
@@ -41,6 +40,7 @@ sdasd | title | title
 * https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments
 * https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
 * https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-french
+* https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare
 
 ```bash
 code --install-extension VisualStudioExptTeam.vscodeintellicode
@@ -48,6 +48,7 @@ code --install-extension CoenraadS.bracket-pair-colorizer-2
 code --install-extension aaron-bond.better-comments
 code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension streetsidesoftware.code-spell-checker-french
+code --install-extension MS-vsliveshare.vsliveshare
 ```
 
 ### Git-GitHub
@@ -201,3 +202,7 @@ For these reasons you may create your own snippets to increase your productivity
 Open the Command Palette ( `CMD + Maj + P` ) and type `Configure User Snippets` , you can then choose to create language-specific snippets or create generic snippets that can be triggered in different scopes.
 
 The file [ `guilgautier.code-snippets` ](./guilgautier.code-snippets) contains some snippets I frequently use and find very convenient.
+
+## Settings
+
+Open the Command Palette ( `CMD + Maj + P` ) and type `Open Settings (JSON)` , you can then choose to create language-specific snippets or create generic snippets that can be triggered in different scopes.
