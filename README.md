@@ -19,7 +19,15 @@
 
 [Visual Studio Code (VSCode)](https://code.visualstudio.com/) is free, open-source, and there is a huge community developing extensions that will ease your writing and coding experience, and thus improve your productivity.
 
-You can place the content of
+On a per project basis you can place the files or copy/paste some bits of the files
+
+- [settings.json](https://github.com/guilgautier/vscode-workflow/blob/main/settings.json)
+- [guilgautier.code-snippets](https://github.com/guilgautier/vscode-workflow/blob/main/guilgautier.code-snippets)
+- [extensions.json](https://github.com/guilgautier/vscode-workflow/blob/main/extensions.json)
+
+in the `.vscode` folder at the root of your project.
+
+You can also define your setup global as described in each sections.
 
 ## Settings
 
