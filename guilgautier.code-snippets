@@ -1,3 +1,5 @@
+// CMD+Maj+P or View->Command palette->Preferences: Configure User Snippets
+// An opinionated list of VS Code snippets used by Guillaume Gautier guilgautier https://guilgautier.github.io/
 {
     // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
     // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
@@ -53,7 +55,7 @@
     // Generic text //
     // ------------ //
     "i.e.,": {
-        "scope": "text,markdown,rst,latex,python,julia",
+        "scope": "text,markdown,restructuredtext,latex,python,julia",
         "prefix": "ie",
         "body": [
             "i.e., $0"
@@ -61,7 +63,7 @@
         "description": ""
     },
     "e.g.,": {
-        "scope": "text,markdown,rst,latex,python,julia",
+        "scope": "text,markdown,restructuredtext,latex,python,julia",
         "prefix": "eg",
         "body": [
             "e.g., $0"
@@ -69,7 +71,7 @@
         "description": ""
     },
     "see, e.g., ": {
-        "scope": "text,markdown,rst,latex,python,julia",
+        "scope": "text,markdown,restructuredtext,latex,python,julia",
         "prefix": "seeeg",
         "body": [
             "see, e.g., $0"
@@ -77,7 +79,7 @@
         "description": ""
     },
     "cf. ": {
-        "scope": "text,markdown,rst,latex,python,julia",
+        "scope": "text,markdown,restructuredtext,latex,python,julia",
         "prefix": "cf",
         "body": [
             "cf. $0"
@@ -85,7 +87,7 @@
         "description": ""
     },
     "w.r.t. ": {
-        "scope": "text,markdown,rst,latex,python,julia",
+        "scope": "text,markdown,restructuredtext,latex,python,julia",
         "prefix": "wrt",
         "body": [
             "w.r.t. $0"
@@ -93,7 +95,7 @@
         "description": ""
     },
     "resp. ": {
-        "scope": "text,markdown,rst,latex,python,julia",
+        "scope": "text,markdown,restructuredtext,latex,python,julia",
         "prefix": "resp",
         "body": [
             "resp. $0"
@@ -101,7 +103,7 @@
         "description": ""
     },
     "i.i.d. ": {
-        "scope": "text,markdown,rst,latex,python,julia",
+        "scope": "text,markdown,restructuredtext,latex,python,julia",
         "prefix": "iid",
         "body": [
             "i.i.d. $0"
@@ -112,20 +114,20 @@
     // Text documentation //
     // ------------------ //
     "bold font": {
-        "scope": "python,rst,julia,markdown",
+        "scope": "python,restructuredtext,julia,markdown",
         "prefix": "bf",
         "body": [
             "**${TM_SELECTED_TEXT}$1**$0"
         ]
     },
     "italic font": {
-        "scope": "python,rst,julia,markdown",
+        "scope": "python,restructuredtext,julia,markdown",
         "prefix": "it",
         "body": [
             "*${TM_SELECTED_TEXT}$1*$0"
         ]
     },
-    "```language  ```": {
+    "```language  ``` code block": {
         "scope": "julia,markdown",
         "prefix": "codeblock",
         "body": [
@@ -465,7 +467,7 @@
     // LaTeX generic and use in code documentation //
     // ------------------------------------------- //
     "∞": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "oo",
         "body": [
             "\\infty$0"
@@ -473,7 +475,7 @@
         "description": "Infinity symbol"
     },
     "text": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "text",
         "body": [
             "\\text{${TM_SELECTED_TEXT}$1}$0"
@@ -481,7 +483,7 @@
         "description": ""
     },
     "text bold font": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "textbf",
         "body": [
             "\\textbf{${TM_SELECTED_TEXT}$1}$0"
@@ -489,7 +491,7 @@
         "description": ""
     },
     "text italic font": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "textit",
         "body": [
             "\\textit{${TM_SELECTED_TEXT}$1}$0"
@@ -497,7 +499,7 @@
         "description": ""
     },
     "and": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "and",
         "body": [
             "\\quad\\text{${1:and}}\\quad$0"
@@ -505,7 +507,7 @@
         "description": ""
     },
     "frac": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "frac",
         "body": [
             "\\frac{$1}{$2}$0"
@@ -513,15 +515,15 @@
         "description": ""
     },
     "square root √": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "sqrt",
         "body": [
-            "\\sqrt{ ${TM_SELECTED_TEXT}$1 }$0"
+            "\\sqrt{${TM_SELECTED_TEXT}$1}$0"
         ],
         "description": ""
     },
     "underbrace expression": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "underbrace",
         "body": [
             "\\underbrace{${TM_SELECTED_TEXT}$1}_{$2}$0"
@@ -529,7 +531,7 @@
         "description": ""
     },
     "overbrace expression": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "overbrace",
         "body": [
             "\\overbrace{${TM_SELECTED_TEXT}$1}^{$2}$0"
@@ -537,7 +539,7 @@
         "description": ""
     },
     "sum": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "sum",
         "body": [
             "\\sum_{${1:n=1}}^{${2:\\infty}}$0"
@@ -545,7 +547,7 @@
         "description": ""
     },
     "prod": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "prod",
         "body": [
             "\\prod_{${1:n=1}}^{${2:\\infty}}$0"
@@ -553,19 +555,19 @@
         "description": ""
     },
     "subscript": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "__",
         "body": "_{${TM_SELECTED_TEXT}$1}$0",
         "description": "subscript"
     },
     "superscript": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "**",
         "body": "^{${TM_SELECTED_TEXT}$1}$0",
         "description": "superscript"
     },
     "sub/super-script": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "__**",
         "body": [
             "_{$1}^{$2}$0"
@@ -573,7 +575,7 @@
         "description": ""
     },
     "≤": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "leq",
         "body": [
             "\\leq$0"
@@ -581,7 +583,7 @@
         "description": ""
     },
     "≥": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "geq",
         "body": [
             "\\geq$0"
@@ -589,7 +591,7 @@
         "description": ""
     },
     "Bar over expression": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "bar",
         "body": [
             "\\bar{${TM_SELECTED_TEXT}$1}$0"
@@ -597,7 +599,7 @@
         "description": ""
     },
     "Hat over expression": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "hat",
         "body": [
             "\\hat{${TM_SELECTED_TEXT}$1}$0"
@@ -605,7 +607,7 @@
         "description": ""
     },
     "Tilde over expression": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "tilde",
         "body": [
             "\\tilde{${TM_SELECTED_TEXT}$1}$0"
@@ -613,7 +615,7 @@
         "description": ""
     },
     "Sequence x_1, ..., x_n": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "seq",
         "body": [
             "${1:x}_{${2:1}}, \\dots, ${1:x}_{${3:N}}$0"
@@ -621,7 +623,7 @@
         "description": ""
     },
     "Curly braces {}": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "cb",
         "body": [
             "\\{${TM_SELECTED_TEXT}$1\\}$0"
@@ -629,7 +631,7 @@
         "description": ""
     },
     "Fraction": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "fraction",
         "body": [
             "\\frac{${1:num}}{${2:den}}$0"
@@ -637,7 +639,7 @@
         "description": ""
     },
     "Set {x_1, ..., x_n}": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "set",
         "body": [
             "\\left\\{${1:x}_{${2:1}}, \\dots, ${1:x}_{${3:N}}}\\right\\}$0"
@@ -645,7 +647,7 @@
         "description": ""
     },
     "Vector (x_1, ..., x_n)": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "vec",
         "body": [
             "\\left(${1:x}_{${2:1}}, \\dots, ${1:x}_{${3:N}}\\right)$0"
@@ -653,7 +655,7 @@
         "description": ""
     },
     "Int_{..}^{..} .. d.": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "int",
         "body": [
             "\\int_{$1}^{$2} $3 d$0"
@@ -661,7 +663,7 @@
         "description": ""
     },
     "Left-right parenthesis ( )": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "lrp",
         "body": [
             "\\left( ${TM_SELECTED_TEXT}$1 \\right)$0"
@@ -669,7 +671,7 @@
         "description": ""
     },
     "Left-right bracket [ ]": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "lrb",
         "body": [
             "\\left[ ${TM_SELECTED_TEXT}$1 \\right]$0"
@@ -677,7 +679,7 @@
         "description": ""
     },
     "Left-right scalar product < >": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "lrsp",
         "body": [
             "\\left\\langle ${TM_SELECTED_TEXT}$1 \\right\\rangle$0"
@@ -685,15 +687,15 @@
         "description": ""
     },
     "Left-right curly brackets { }": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "lrcb",
         "body": [
-            "\\left\\{ ${TM_SELECTED_TEXT}$1 \\right\\}$0"
+            "\\left\\{${TM_SELECTED_TEXT}$1 \\right\}$0"
         ],
         "description": ""
     },
     "Left-right absolute value | |": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "lrabs",
         "body": [
             "\\left\\lvert ${TM_SELECTED_TEXT}$1 \\right\\rvert$0"
@@ -701,7 +703,7 @@
         "description": ""
     },
     "Left-right norm ‖ ‖": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "lrnorm",
         "body": [
             "\\left\\lVert ${TM_SELECTED_TEXT}$1 \\right\\rVert$0"
@@ -709,7 +711,7 @@
         "description": ""
     },
     "Left-right floor ⌊ ⌋": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "lrfloor",
         "body": [
             "\\left\\lfloor ${TM_SELECTED_TEXT}$1 \\right\\rfloor$0"
@@ -717,31 +719,31 @@
         "description": ""
     },
     "Math bold font": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "mbf",
         "body": [
-            "\\mathbf{ ${TM_SELECTED_TEXT}$1 }$0"
+            "\\mathbf{${TM_SELECTED_TEXT}$1}$0"
         ],
         "description": ""
     },
     "Math blackboard font": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "mbb",
         "body": [
-            "\\mathbb{ ${TM_SELECTED_TEXT}$1 }$0"
+            "\\mathbb{${TM_SELECTED_TEXT}$1}$0"
         ],
         "description": ""
     },
     "Math caligraphic font": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "mcal",
         "body": [
-            "\\mathcal{ ${TM_SELECTED_TEXT}$1 }$0"
+            "\\mathcal{${TM_SELECTED_TEXT}$1}$0"
         ],
         "description": ""
     },
     "Operatorname": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "operatorname",
         "body": [
             "\\operatorname{${TM_SELECTED_TEXT}$1}$0"
@@ -749,7 +751,7 @@
         "description": ""
     },
     "diag(x_1, ..., x_n)": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "diag",
         "body": [
             "\\operatorname{diag}\\left(${1:x}_{${2:1}}, \\dots, ${1:x}_{${3:n}}\\right)$0"
@@ -757,7 +759,7 @@
         "description": ""
     },
     "trace(..)": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "trace",
         "body": [
             "\\operatorname{trace}(${TM_SELECTED_TEXT}$1)$0"
@@ -765,7 +767,7 @@
         "description": ""
     },
     "Rank(..)": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "rank",
         "body": [
             "\\operatorname{rank}(${TM_SELECTED_TEXT}$1)$0"
@@ -773,7 +775,7 @@
         "description": ""
     },
     "Vandermonde matrix notation": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "vandermonde",
         "body": [
             "\\Delta\\left(${1:x}_{${2:1}}, \\dots, ${1:x}_{${3:n}}\\right)$0"
@@ -781,7 +783,7 @@
         "description": ""
     },
     "P[...]": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "proba",
         "body": [
             "\\mathbb{P}\\!\\left[ ${TM_SELECTED_TEXT}$1 \\right]$0"
@@ -789,7 +791,7 @@
         "description": ""
     },
     "E[...]": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "expectation",
         "body": [
             "\\mathbb{E}\\!\\left[ ${TM_SELECTED_TEXT}$1 \\right]$0"
@@ -797,7 +799,7 @@
         "description": ""
     },
     "Var[...]": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "variance",
         "body": [
             "\\mathbb{V}\\text{ar}\\left[ ${TM_SELECTED_TEXT}$1 \\right]$0"
@@ -805,7 +807,7 @@
         "description": ""
     },
     "Cov[...]": {
-        "scope": "latex,python,rst,julia,markdown",
+        "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "covariance",
         "body": [
             "\\mathbb{C}\\text{ov}\\left[ ${TM_SELECTED_TEXT}$1 \\right]$0"
@@ -1078,62 +1080,127 @@
         "description": ""
     },
     // ------------------------ //
-    // Python-RST documentation //
+    // Python-restructuredtext Sphinx documentation //
+    // https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html
+    // https: //www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#directive-py-module
     // ------------------------ //
     "``code``": {
-        "scope": "python,rst",
-        "prefix": "code",
+        "scope": "python,restructuredtext",
+        "prefix": "codeinline",
         "body": [
             "``${TM_SELECTED_TEXT}$1``$0"
         ],
         "description": ""
     },
+    ":math:": {
+        "scope": "python,restructuredtext",
+        "prefix": "mathinline",
+        "body": [
+            ":math:`${TM_SELECTED_TEXT}$1`$0"
+        ]
+    },
+    // reference to code in docstrings
     ":py:attr:": {
-        "scope": "python,rst",
-        "prefix": "pyattr",
+        "scope": "python,restructuredtext",
+        "prefix": "refattr",
         "body": [
             ":py:attr:`${TM_SELECTED_TEXT}$1`$0"
         ]
     },
     ":py:class:": {
-        "scope": "python,rst",
-        "prefix": "pyclass",
+        "scope": "python,restructuredtext",
+        "prefix": "refclass",
         "body": [
             ":py:class:`${TM_SELECTED_TEXT}$1`$0"
         ]
     },
+    ":py:const:": {
+        "scope": "python,restructuredtext",
+        "prefix": "refconst",
+        "body": [
+            ":py:const:`${TM_SELECTED_TEXT}$1`$0"
+        ]
+    },
+    ":py:data:": {
+        "scope": "python,restructuredtext",
+        "prefix": "refdata",
+        "body": [
+            ":py:data:`${TM_SELECTED_TEXT}$1`$0"
+        ]
+    },
+    ":py:exc:": {
+        "scope": "python,restructuredtext",
+        "prefix": "refexc",
+        "body": [
+            ":py:exc:`${TM_SELECTED_TEXT}$1`$0"
+        ]
+    },
     ":py:func:": {
-        "scope": "python,rst",
-        "prefix": "pyfunc",
+        "scope": "python,restructuredtext",
+        "prefix": "reffunc",
         "body": [
             ":py:func:`${TM_SELECTED_TEXT}$1`$0"
         ]
     },
     ":py:meth:": {
-        "scope": "python,rst",
-        "prefix": "pymeth",
+        "scope": "python,restructuredtext",
+        "prefix": "refmeth",
         "body": [
             ":py:meth:`${TM_SELECTED_TEXT}$1`$0"
         ]
     },
-    ":retrun:": {
-        "scope": "python,rst",
-        "prefix": "return",
+    ":py:mod:": {
+        "scope": "python,restructuredtext",
+        "prefix": "refmod",
         "body": [
-            ":return:",
-            "\t$0"
+            ":py:mod:`${TM_SELECTED_TEXT}$1`$0"
         ]
     },
-    ":rtype:": {
-        "scope": "python,rst",
-        "prefix": "rtype",
+    ":py:obj:": {
+        "scope": "python,restructuredtext",
+        "prefix": "refobj",
         "body": [
-            ":rtype:",
-            "\t$0"
+            ":py:obj:`${TM_SELECTED_TEXT}$1`$0"
         ]
     },
+    ":cite:": {
+        "scope": "python,restructuredtext",
+        "prefix": "cite",
+        "body": [
+            ":cite:`${TM_SELECTED_TEXT}$1`$0"
+        ]
+    },
+    ":ref:": {
+        "scope": "python,restructuredtext",
+        "prefix": "ref",
+        "body": [
+            ":ref:`${TM_SELECTED_TEXT}$1 <$2>`$0"
+        ]
+    },
+    ":numref:": {
+        "scope": "python,restructuredtext",
+        "prefix": "numref",
+        "body": [
+            ":numref:`${TM_SELECTED_TEXT}$1 <$2>`$0"
+        ]
+    },
+    ":eqref:": {
+        "scope": "python,restructuredtext",
+        "prefix": "eqref",
+        "body": [
+            ":eq:`eq:${TM_SELECTED_TEXT}$1`$0"
+        ]
+    },
+    "link ref": {
+        "scope": "python,restructuredtext",
+        "prefix": "link",
+        "body": [
+            "`${TM_SELECTED_TEXT:text} <${1:link}>`_$0"
+        ]
+    },
+    // docstring specification
     ":param X:": {
-        "scope": "python,rst",
+        "scope": "python,restructuredtext",
         "prefix": "param",
         "body": [
             ":param ${TM_SELECTED_TEXT}$1:",
@@ -1141,51 +1208,34 @@
         ]
     },
     ":type X:": {
-        "scope": "python,rst",
+        "scope": "python,restructuredtext",
         "prefix": "type",
         "body": [
             ":type ${TM_SELECTED_TEXT}$1:",
             "\t$0"
         ]
     },
-    ":math:": {
-        "scope": "python,rst",
-        "prefix": "mathinline",
+    ":retrun:": {
+        "scope": "python,restructuredtext",
+        "prefix": "return",
         "body": [
-            ":math:`${TM_SELECTED_TEXT}$1`$0"
+            ":return:",
+            "\t$0"
         ]
     },
-    ":cite:": {
-        "scope": "python,rst",
-        "prefix": "cite",
+    ":rtype:": {
+        "scope": "python,restructuredtext",
+        "prefix": "rtype",
         "body": [
-            ":cite:`${TM_SELECTED_TEXT}$1`$0"
+            ":rtype:",
+            "\t$0"
         ]
     },
-    ":ref:": {
-        "scope": "python,rst",
-        "prefix": "ref",
-        "body": [
-            ":ref:`${TM_SELECTED_TEXT}$1 <$2>`$0"
-        ]
-    },
-    ":eqref:": {
-        "scope": "python,rst",
-        "prefix": "eqref",
-        "body": [
-            ":eq:`eq:${TM_SELECTED_TEXT}$1`$0"
-        ]
-    },
-    "link ref": {
-        "scope": "python,rst",
-        "prefix": "link",
-        "body": [
-            "`${TM_SELECTED_TEXT:text} <${1:link}>`_$0"
-        ]
-    },
-    // directives https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html
+    // directives
+    // https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html
+    // https://docutils.sourceforge.io/docs/ref/rst/directives.html
     ".. attention::": {
-        "scope": "python,rst",
+        "scope": "python,restructuredtext",
         "prefix": "attention",
         "body": [
             ".. attention::",
@@ -1194,7 +1244,7 @@
         "description": ""
     },
     ".. caution::": {
-        "scope": "python,rst",
+        "scope": "python,restructuredtext",
         "prefix": "caution",
         "body": [
             ".. caution::",
@@ -1203,8 +1253,8 @@
         "description": ""
     },
     ".. code-block::": {
-        "scope": "python,rst",
-        "prefix": "code-block",
+        "scope": "python,restructuredtext",
+        "prefix": "codeblock",
         "body": [
             ".. code-block:: python",
             "\t:caption: this.py",
@@ -1217,7 +1267,7 @@
         "description": ""
     },
     ".. danger::": {
-        "scope": "python,rst",
+        "scope": "python,restructuredtext",
         "prefix": "danger",
         "body": [
             ".. danger::",
@@ -1225,8 +1275,17 @@
         ],
         "description": ""
     },
+    ".. deprecated::": {
+        "scope": "python,restructuredtext",
+        "prefix": "deprecated",
+        "body": [
+            ".. deprecated::",
+            "\n\t${TM_SELECTED_TEXT}$0"
+        ],
+        "description": ""
+    },
     ".. error::": {
-        "scope": "python,rst",
+        "scope": "python,restructuredtext",
         "prefix": "error",
         "body": [
             ".. error::",
@@ -1235,7 +1294,7 @@
         "description": ""
     },
     ".. hint::": {
-        "scope": "python,rst",
+        "scope": "python,restructuredtext",
         "prefix": "hint",
         "body": [
             ".. hint::",
@@ -1243,8 +1302,31 @@
         ],
         "description": ""
     },
+    ".. highlight::": {
+        "scope": "python,restructuredtext",
+        "prefix": "highlight",
+        "body": [
+            ".. highlight:: ${1:language}",
+            "\t:linenothreshold:",
+            "\n\t${TM_SELECTED_TEXT}$0",
+        ],
+        "description": ""
+    },
+    ".. image::": {
+        "scope": "python,restructuredtext",
+        "prefix": "image",
+        "body": [
+            ".. image:: ${1:path_to_img.extension}",
+            "\t:height: 100px",
+            "\t:width: 200 px / 50% percentage current line width",
+            "\t:scale: 100 %",
+            "\t:alt: alternate text",
+            "\t:align: top/middle/bottom/left/center/right",
+        ],
+        "description": ""
+    },
     ".. important::": {
-        "scope": "python,rst",
+        "scope": "python,restructuredtext",
         "prefix": "important",
         "body": [
             ".. important::",
@@ -1253,10 +1335,12 @@
         "description": ""
     },
     ".. literalinclude:: file.py": {
-        "scope": "python,rst",
+        "scope": "python,restructuredtext",
         "prefix": "literalinclude",
         "body": [
             ".. literalinclude:: file.py",
+            "\t:language: python",
+            "\t:pyobject: object in file (Class.attr, Class.meth, func, ...)",
             "\t:lines: 1-",
             "\t:caption: this.py",
             "\t:name: this-py",
@@ -1267,16 +1351,17 @@
         "description": ""
     },
     ".. math::": {
-        "scope": "python,rst",
-        "prefix": "math",
+        "scope": "python,restructuredtext",
+        "prefix": "mathblock",
         "body": [
             ".. math::",
-            "\n\t${TM_SELECTED_TEXT}$0"
+            "\t:label: eq:${1:my-label}",
+            "\n\t${TM_SELECTED_TEXT}$0",
         ],
         "description": ""
     },
     ".. note::": {
-        "scope": "python,rst",
+        "scope": "python,restructuredtext",
         "prefix": "note",
         "body": [
             ".. note::",
@@ -1285,7 +1370,7 @@
         "description": ""
     },
     ".. seealso::": {
-        "scope": "python,rst",
+        "scope": "python,restructuredtext",
         "prefix": "seealso",
         "body": [
             ".. seealso::",
@@ -1294,7 +1379,7 @@
         "description": ""
     },
     ".. tip::": {
-        "scope": "python,rst",
+        "scope": "python,restructuredtext",
         "prefix": "tip",
         "body": [
             ".. tip::",
@@ -1302,17 +1387,30 @@
         ],
         "description": ""
     },
-    ".. todo::": {
-        "scope": "python,rst",
-        "prefix": "todo",
+    ".. toctree::": {
+        "scope": "python,restructuredtext",
+        "prefix": "toctree",
         "body": [
-            ".. todo::",
+            ".. toctree::",
             "\n\t${TM_SELECTED_TEXT}$0"
         ],
         "description": ""
     },
+    ".. todo::": {
+        "scope": "python,restructuredtext",
+        "prefix": "todo",
+        "body": [
+            ".. todo::",
+            "\t:caption: Contents",
+            "\t:name: mastertoc",
+            "\t:maxdepth: 2",
+            "\n\tpath_to_filename1 (without .extension)",
+            "\tpath_to_filename2 (without .extension)",
+        ],
+        "description": ""
+    },
     ".. warning::": {
-        "scope": "python,rst",
+        "scope": "python,restructuredtext",
         "prefix": "warning",
         "body": [
             ".. warning::",
@@ -1325,7 +1423,7 @@
     // ---------------------------- //
     "`code`": {
         "scope": "julia,markdown",
-        "prefix": "code",
+        "prefix": "codeinline",
         "body": [
             "`${TM_SELECTED_TEXT}$1`$0"
         ],

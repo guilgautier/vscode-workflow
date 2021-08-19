@@ -19,11 +19,13 @@
 
 [Visual Studio Code (VSCode)](https://code.visualstudio.com/) is free, open-source, and there is a huge community developing extensions that will ease your writing and coding experience, and thus improve your productivity.
 
+You can place the content of
+
 ## Settings
 
 > [VSCode settings](https://code.visualstudio.com/docs/getstarted/settings) You can configure Visual Studio Code to your liking through its various settings. Nearly every part of VS Code's editor, user interface, and functional behavior has options you can modify.
 
-To edit your personal setting, open the Command Palette ( `CMD + Maj + P` ) and type `Open Settings (JSON)` .
+To edit your personal settings, open the Command Palette ( `CMD + Maj + P` ) and type `Open Settings (JSON)` .
 
 The file [settings.json](https://github.com/guilgautier/vscode-workflow/blob/main/settings.json) contains my favorite settings.
 **Note:** Some settings only correspond to corresponding [Extensions](#extensions) suggested below.

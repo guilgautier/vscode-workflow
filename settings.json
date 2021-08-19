@@ -1,18 +1,20 @@
-// View->Command palette->Open Settings (JSON)
+// CMD+Maj+P or View->Command palette->Preferences: Open Settings (JSON)
+// An opinionated list of VS Code settings used by Guillaume Gautier guilgautier https://guilgautier.github.io/
 {
     "breadcrumbs.enabled": true,
-    "diffEditor.ignoreTrimWhitespace": false,
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && g++ -std=c++14 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "python": "python -u"
+    },
     // Explorer
     "explorer.sortOrder": "type",
     // Workbench
-    "workbench.activityBar.visible": true,
     "workbench.colorTheme": "Julia (Monokai Classic)",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.activityBar.visible": true,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     "workbench.sideBar.location": "right",
     "workbench.statusBar.visible": true,
     "window.openFilesInNewWindow": "off",
@@ -21,7 +23,9 @@
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     // Editor
-    "editor.codeActionsOnSave": null,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.markdownlint": true
+    },
     "editor.detectIndentation": true,
     "editor.fontSize": 13,
     "editor.formatOnPaste": true,
@@ -46,8 +50,44 @@
     // Terminal
     "terminal.integrated.inheritEnv": false,
     "terminal.integrated.rendererType": "auto",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.fontFamily": "Meslo LG L DZ for Powerline",
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
     // Intellicode
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    // LaTeX
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.chktex.enabled": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.bibtex-format.tab": "4 spaces",
+    "latex-workshop.bibtex-format.trailingComma": true,
+    "latex-workshop.bibtex-format.sort.enabled": true,
+    "latex-workshop.bibtex-fields.sort.enabled": true,
+    // Julia https://github.com/invenia/BlueStyle#code-formatting
+    "[julia]": {
+        "editor.tabSize": 4,
+        "editor.wordWrapColumn": 92,
+        "editor.rulers": [
+            {
+                "column": 92,
+                "color": "#ff00FF"
+            },
+            100, // <- a ruler in the default color or as customized at column 0
+            {
+                "column": 120,
+                "color": "#ff0000"
+            },
+        ],
+        "editor.defaultFormatter": "singularitti.vscode-julia-formatter",
+    },
+    "julia.execution.codeInREPL": true,
+    "julia.enableTelemetry": true,
+    "julia.environmentPath": "",
+    "julia.format.keywords": null,
+    "julia.enableCrashReporter": true,
+    "julia.additionalArgs": [],
     // Python
     "[python]": {
         "editor.insertSpaces": true,
@@ -66,66 +106,28 @@
         "editor.wordWrapColumn": 80,
     },
     "python.languageServer": "Pylance",
-    "python.condaPath": "/Users/ggautier/opt/anaconda3/bin/anaconda",
-    "python.pythonPath": "/Users/ggautier/opt/anaconda3/bin/python",
-    "python.defaultInterpreterPath": "/Users/ggautier/opt/anaconda3/bin/python",
-    "python.experiments.optInto": [],
+    "python.condaPath": "~/opt/anaconda3/bin/anaconda",
     "python.formatting.provider": "black",
     "pythonIndent.trimLinesWithOnlyWhitespace": true,
     "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=120",
+        "--ignore=E501",
+    ],
     "python.linting.lintOnSave": true,
     "python.showStartPage": false,
     "python.terminal.activateEnvironment": false,
     "autoDocstring.docstringFormat": "sphinx",
-    // Jupyter
-    "jupyter.alwaysTrustNotebooks": true,
-    "jupyter.askForKernelRestart": false,
     // Markdown
-    "markdownFormatter.codeAreaToBlock": "",
-    "markdownFormatter.fullWidthTurnHalfWidth": "auto",
     "[markdown]": {
         "editor.tabSize": 2,
-        "editor.quickSuggestions": true,
-        "editor.defaultFormatter": "mervin.markdown-formatter"
     },
+    // RestructuredText
+    "restructuredtext.confPath": "${workspaceFolder}/docs",
     // TOML
     "[toml]": {
         "editor.defaultFormatter": "tamasfe.even-better-toml"
     },
-    // LaTeX
-    "latex-workshop.latex.autoBuild.run": "never",
-    "latex-workshop.chktex.enabled": true,
-    "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.bibtex-format.tab": "4 spaces",
-    "latex-workshop.bibtex-format.trailingComma": true,
-    "latex-workshop.bibtex-format.sort.enabled": true,
-    "latex-workshop.bibtex-fields.sort.enabled": true,
-    // Julia
-    "[julia]": {
-        "editor.tabSize": 4,
-        "editor.wordWrapColumn": 92,
-        "editor.rulers": [
-            {
-                "column": 92,
-                "color": "#ff00FF"
-            },
-            100, // <- a ruler in the default color or as customized at column 0
-            {
-                "column": 120,
-                "color": "#ff0000"
-            },
-        ],
-        "editor.defaultFormatter": "singularitti.vscode-julia-formatter",
-    },
-    // Following https://github.com/invenia/BlueStyle#code-formatting
-    "julia.execution.codeInREPL": true,
-    "julia.executablePath": "/usr/local/bin/julia",
-    "julia.enableTelemetry": true,
-    "julia.environmentPath": "",
-    "julia.format.keywords": null,
-    "julia.enableCrashReporter": true,
-    "julia.additionalArgs": [],
     // GitHub Pull requests and Issues
     "githubPullRequests.fileListLayout": "flat",
     "diffEditor.renderSideBySide": false,
