@@ -25,7 +25,7 @@ On a per project basis you can place the files or copy/paste some bits of the fi
 - [guilgautier.code-snippets](https://github.com/guilgautier/vscode-workflow/blob/main/guilgautier.code-snippets)
 - [extensions.json](https://github.com/guilgautier/vscode-workflow/blob/main/extensions.json)
 
-in the `.vscode` folder at the root of your project.
+in the [`.vscode`](./.vscode) folder at the root of your project.
 
 You can also define your setup global as described in each sections.
 
@@ -70,6 +70,7 @@ To install the the extensions listed and detailed in the next sections you can e
 ### General
 
 - <https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode>
+- <https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense>
 - <https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2>
 - <https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments>
 - <https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker>
@@ -78,6 +79,7 @@ To install the the extensions listed and detailed in the next sections you can e
 
 ```bash
 code --install-extension VisualStudioExptTeam.vscodeintellicode
+code --install-extension christian-kohler.path-intellisense
 code --install-extension CoenraadS.bracket-pair-colorizer-2
 code --install-extension aaron-bond.better-comments
 code --install-extension streetsidesoftware.code-spell-checker
