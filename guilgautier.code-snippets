@@ -19,7 +19,7 @@
     // }
     // Text
     "my email": {
-        "scope": "latex,markdown,text",
+        "scope": "latex,markdown,text,restructuredtext",
         "prefix": "myemail",
         "body": [
             "guillaume.gga@gmail.com"
@@ -27,7 +27,7 @@
         "description": ""
     },
     "my webpage": {
-        "scope": "latex,markdown,text",
+        "scope": "latex,markdown,text,restructuredtext",
         "prefix": "mywebpage",
         "body": [
             "https://guilgautier.github.io"
@@ -35,7 +35,7 @@
         "description": ""
     },
     "my github": {
-        "scope": "latex,markdown,text",
+        "scope": "latex,markdown,text,restructuredtext",
         "prefix": "mygithub",
         "body": [
             "https://github.com/guilgautier"
@@ -132,7 +132,7 @@
         "prefix": "codeblock",
         "body": [
             "```${1:language}",
-            "\t${TM_SELECTED_TEXT}$2",
+            "${TM_SELECTED_TEXT}$2",
             "```",
             "\n$0"
         ],
@@ -210,6 +210,7 @@
         "description": ""
     },
     "Itemize environment": {
+        "scope": "latex",
         "prefix": "bitemize",
         "body": [
             "\\begin{itemize}",
@@ -219,6 +220,7 @@
         "description": "itemize environment"
     },
     "Enumerate environment": {
+        "scope": "latex",
         "prefix": "benumerate",
         "body": [
             "\\begin{enumerate}",
@@ -253,7 +255,7 @@
     },
     "Aligned equations in math environment with label": {
         "scope": "latex",
-        "prefix": "balign",
+        "prefix": "bequtionaligned",
         "body": [
             "\\begin{equation}",
             "\\label{eq:$2}",
@@ -277,6 +279,7 @@
         "description": ""
     },
     "Gather math environment with label": {
+        "scope": "latex",
         "prefix": "bgather",
         "body": [
             "\\begin{${1|gather,gather*|}}",
@@ -690,7 +693,7 @@
         "scope": "latex,python,restructuredtext,julia,markdown",
         "prefix": "lrcb",
         "body": [
-            "\\left\\{${TM_SELECTED_TEXT}$1 \\right\}$0"
+            "\\left\\{${TM_SELECTED_TEXT}$1 \\right\\}$0"
         ],
         "description": ""
     },
@@ -852,6 +855,7 @@
         "scope": "python",
         "prefix": [
             "def",
+            "function",
             "deffunction"
         ],
         "body": [
@@ -875,7 +879,7 @@
     "def class method": {
         "scope": "python",
         "prefix": [
-            "method"
+            "method",
             "defmethod",
         ],
         "body": [
@@ -1306,8 +1310,8 @@
         "scope": "python,restructuredtext",
         "prefix": "highlight",
         "body": [
-            ".. highlight:: ${1:language}",
-            "\t:linenothreshold:",
+            ".. highlight:: ${1:python}",
+            "\t${2:linenothreshold:}",
             "\n\t${TM_SELECTED_TEXT}$0",
         ],
         "description": ""
