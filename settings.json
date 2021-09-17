@@ -96,12 +96,13 @@
     },
     "python.languageServer": "Pylance",
     "python.condaPath": "~/opt/anaconda3/bin/anaconda",
-    "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
     "python.formatting.provider": "black",
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
     "python.terminal.activateEnvironment": false,
-    "autoDocstring.docstringFormat": "sphinx",
+    // add sphinx.ext.napoleon to conf.py shttps://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
+    "autoDocstring.docstringFormat": "google",
     "pythonIndent.trimLinesWithOnlyWhitespace": true,
     // Markdown
     "[markdown]": {
