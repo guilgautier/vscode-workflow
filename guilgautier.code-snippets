@@ -1406,10 +1406,7 @@
         "body": [
             ".. todo::",
             "\t:caption: Contents",
-            "\t:name: mastertoc",
-            "\t:maxdepth: 2",
-            "\n\tpath_to_filename1 (without .extension)",
-            "\tpath_to_filename2 (without .extension)",
+            "\n\t${TM_SELECTED_TEXT}$0"
         ],
         "description": ""
     },
