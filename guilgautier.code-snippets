@@ -876,7 +876,7 @@
         ],
         "description": ""
     },
-    "def class method": {
+    "def method of class": {
         "scope": "python",
         "prefix": [
             "method",
@@ -884,6 +884,32 @@
         ],
         "body": [
             "def ${1:function_name}(self, ${2:args}):",
+            "\t$0"
+        ],
+        "description": ""
+    },
+    "def test pytest": {
+        "scope": "python",
+        "prefix": [
+            "pytest",
+            "deftest",
+        ],
+        "body": [
+            "def test_${1:description}():",
+            "\tassert $2",
+            "\t$0"
+        ],
+        "description": ""
+    },
+    "@classmethod def": {
+        "scope": "python",
+        "prefix": [
+            "classmethod",
+            "defclassmethod",
+        ],
+        "body": [
+            "@classmethod",
+            "def ${1:fname}(${2:args}):",
             "\t$0"
         ],
         "description": ""
@@ -1405,7 +1431,6 @@
         "prefix": "todo",
         "body": [
             ".. todo::",
-            "\t:caption: Contents",
             "\n\t${TM_SELECTED_TEXT}$0"
         ],
         "description": ""
@@ -1418,6 +1443,53 @@
             "\n\t${TM_SELECTED_TEXT}$0"
         ],
         "description": ""
+    },
+    // requires sphinx.ext.doctest in docs/conf.py
+    // https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html
+    ".. doctest::": {
+        "scope": "python,restructuredtext",
+        "prefix": "doctest",
+        "body": [
+            ".. doctest::",
+            "\n\t${TM_SELECTED_TEXT}$0"
+        ],
+        "description": "requires sphinx.ext.doctest extension in docs/conf.py"
+    },
+    ".. testsetup::": {
+        "scope": "python,restructuredtext",
+        "prefix": "testsetup",
+        "body": [
+            ".. testsetup::",
+            "\n\t${TM_SELECTED_TEXT}$0"
+        ],
+        "description": "requires sphinx.ext.doctest in docs/conf.py"
+    },
+    ".. testcleanup::": {
+        "scope": "python,restructuredtext",
+        "prefix": "testcleanup",
+        "body": [
+            ".. testcleanup::",
+            "\n\t${TM_SELECTED_TEXT}$0"
+        ],
+        "description": "requires sphinx.ext.doctest in docs/conf.py"
+    },
+    ".. testcode::": {
+        "scope": "python,restructuredtext",
+        "prefix": "testcode",
+        "body": [
+            ".. testcode::",
+            "\n\t${TM_SELECTED_TEXT}$0"
+        ],
+        "description": "requires sphinx.ext.doctest in docs/conf.py"
+    },
+    ".. testoutput::": {
+        "scope": "python,restructuredtext",
+        "prefix": "testoutput",
+        "body": [
+            ".. testoutput::",
+            "\n\t${TM_SELECTED_TEXT}$0"
+        ],
+        "description": "requires sphinx.ext.doctest in docs/conf.py"
     },
     // ---------------------------- //
     // Julia-Markdown documentation //
