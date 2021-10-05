@@ -19,7 +19,7 @@
     // }
     // Text
     "my email": {
-        "scope": "latex,markdown,text,restructuredtext",
+        "scope": "",
         "prefix": "myemail",
         "body": [
             "guillaume.gga@gmail.com"
@@ -27,7 +27,7 @@
         "description": ""
     },
     "my webpage": {
-        "scope": "latex,markdown,text,restructuredtext",
+        "scope": "",
         "prefix": "mywebpage",
         "body": [
             "https://guilgautier.github.io"
@@ -35,7 +35,7 @@
         "description": ""
     },
     "my github": {
-        "scope": "latex,markdown,text,restructuredtext",
+        "scope": "",
         "prefix": "mygithub",
         "body": [
             "https://github.com/guilgautier"
@@ -55,7 +55,7 @@
     // Generic text //
     // ------------ //
     "i.e.,": {
-        "scope": "text,markdown,restructuredtext,latex,python,julia",
+        "scope": "", // "text,markdown,restructuredtext,latex,python,julia",
         "prefix": "ie",
         "body": [
             "i.e., $0"
@@ -63,7 +63,7 @@
         "description": ""
     },
     "e.g.,": {
-        "scope": "text,markdown,restructuredtext,latex,python,julia",
+        "scope": "", // "text,markdown,restructuredtext,latex,python,julia",
         "prefix": "eg",
         "body": [
             "e.g., $0"
@@ -71,7 +71,7 @@
         "description": ""
     },
     "see, e.g., ": {
-        "scope": "text,markdown,restructuredtext,latex,python,julia",
+        "scope": "", // "text,markdown,restructuredtext,latex,python,julia",
         "prefix": "seeeg",
         "body": [
             "see, e.g., $0"
@@ -79,7 +79,7 @@
         "description": ""
     },
     "cf. ": {
-        "scope": "text,markdown,restructuredtext,latex,python,julia",
+        "scope": "", // "text,markdown,restructuredtext,latex,python,julia",
         "prefix": "cf",
         "body": [
             "cf. $0"
@@ -87,7 +87,7 @@
         "description": ""
     },
     "w.r.t. ": {
-        "scope": "text,markdown,restructuredtext,latex,python,julia",
+        "scope": "", // "text,markdown,restructuredtext,latex,python,julia",
         "prefix": "wrt",
         "body": [
             "w.r.t. $0"
@@ -95,7 +95,7 @@
         "description": ""
     },
     "resp. ": {
-        "scope": "text,markdown,restructuredtext,latex,python,julia",
+        "scope": "", // "text,markdown,restructuredtext,latex,python,julia",
         "prefix": "resp",
         "body": [
             "resp. $0"
@@ -103,7 +103,7 @@
         "description": ""
     },
     "i.i.d. ": {
-        "scope": "text,markdown,restructuredtext,latex,python,julia",
+        "scope": "", // "text,markdown,restructuredtext,latex,python,julia",
         "prefix": "iid",
         "body": [
             "i.i.d. $0"
@@ -821,7 +821,7 @@
     // Python specific //
     // --------------- //
     "env3": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": [
             "env3",
             "#!3"
@@ -832,7 +832,7 @@
         "description": "Set shebang for Python 3"
     },
     "import ...": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": [
             "import"
         ],
@@ -842,7 +842,7 @@
         "description": ""
     },
     "from ... import ...": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": [
             "from"
         ],
@@ -852,7 +852,7 @@
         "description": ""
     },
     "def function": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": [
             "def",
             "function",
@@ -865,7 +865,7 @@
         "description": ""
     },
     "class": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": "class",
         "body": [
             "class ${1:ClassName}(${2:object}):",
@@ -877,7 +877,7 @@
         "description": ""
     },
     "def method of class": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": [
             "method",
             "defmethod",
@@ -888,21 +888,8 @@
         ],
         "description": ""
     },
-    "def test pytest": {
-        "scope": "python",
-        "prefix": [
-            "pytest",
-            "deftest",
-        ],
-        "body": [
-            "def test_${1:description}():",
-            "\tassert $2",
-            "\t$0"
-        ],
-        "description": ""
-    },
     "@classmethod def": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": [
             "classmethod",
             "defclassmethod",
@@ -912,10 +899,10 @@
             "def ${1:fname}(${2:args}):",
             "\t$0"
         ],
-        "description": ""
+        "description": "https://docs.python.org/3/library/functions.html?#classmethod"
     },
     "@staticmethod def": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": [
             "staticmethod",
             "defstaticmethod",
@@ -925,10 +912,10 @@
             "def ${1:fname}(${2:args}):",
             "\t$0"
         ],
-        "description": ""
+        "description": "https://docs.python.org/3/library/functions.html?#staticmethod"
     },
     "@property def": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": [
             "property",
             "defproperty",
@@ -941,10 +928,77 @@
             "def ${5:$1}(self, value):",
             "\t${6:self._$1} = value"
         ],
-        "description": "New property: get and set via decorator"
+        "description": "New property: get and set via decorator https://docs.python.org/3/library/functions.html?#property"
+    },
+    "def pytest test": {
+        "scope": "python, restructuredtext",
+        "prefix": [
+            "pytest",
+            "deftest",
+        ],
+        "body": [
+            "def test_${1:description}():",
+            "\tassert $2",
+            "\t$0"
+        ],
+        "description": ""
+    },
+    "def pytest fixture": {
+        "scope": "python, restructuredtext",
+        "prefix": [
+            "pytestfixture",
+            "deffixture",
+        ],
+        "body": [
+            "def ${1:fixture_name}():",
+            "\treturn True",
+            "\t$0"
+        ],
+        "description": "https://docs.pytest.org/en/6.2.x/fixture.html"
+    },
+    "def pytest": {
+        "scope": "python, restructuredtext",
+        "prefix": [
+            "pytestparam",
+            "defpytestparam",
+        ],
+        "body": [
+            "@pytest.mark.parametrize(",
+            "\t\"x, y, expected\",",
+            "\t[",
+            "\t(1, 2, 3),",
+            "\t(2, 2, 4),",
+            "\t]",
+            ")",
+            "def test_${1:sum}(x, y, expected):",
+            "\tcomputed = x + y",
+            "\tassert computed == expected",
+            "\t$0"
+        ],
+        "description": "https://docs.pytest.org/en/6.2.x/parametrize.html"
+    },
+    "@decorator definition": {
+        "scope": "python, restructuredtext",
+        "prefix": "decorator",
+        "body": [
+            "import functools\n",
+            "def decorator_name(func):",
+            "\t@functools.wraps(func)",
+            "\tdef wrapper_decorator(*args, **kwargs):",
+            "\t\t# Do something before",
+            "\t\tvalue = func(*args, **kwargs)",
+            "\t\t# Do something after",
+            "\t\treturn value",
+            "\treturn wrapper_decorator",
+            "\n# usage",
+            "@decorator_name",
+            "def function()",
+            "\treturn None"
+        ],
+        "description": "@decorator https://realpython.com/primer-on-python-decorators/"
     },
     "if": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": "if",
         "body": [
             "if ${1:condition}:",
@@ -953,7 +1007,7 @@
         "description": "if statement"
     },
     "elif": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": "elif",
         "body": [
             "elif ${1:condition}:",
@@ -962,7 +1016,7 @@
         "description": "elif statement"
     },
     "else": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": "else",
         "body": [
             "else ${1:condition}:",
@@ -971,7 +1025,7 @@
         "description": "else statement"
     },
     "if else": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": "ifelse",
         "body": [
             "if ${1:condition}:",
@@ -982,7 +1036,7 @@
         "description": "if else statement"
     },
     "if elif else": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": "ifelif",
         "body": [
             "if ${1:condition}:",
@@ -995,7 +1049,7 @@
         "description": "if elif else statement"
     },
     "for loop": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": [
             "for"
         ],
@@ -1006,7 +1060,7 @@
         "description": "for loop structure"
     },
     "Iterate dictionnary items": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": [
             "fordict",
             "itdict"
@@ -1018,7 +1072,7 @@
         "description": "Iterate dictionnary items"
     },
     "enumerate": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": [
             "enumerate",
         ],
@@ -1029,7 +1083,7 @@
         "description": "for loop structure"
     },
     "for loop else": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": [
             "forelse"
         ],
@@ -1042,7 +1096,7 @@
         "description": "for loop structure with else"
     },
     "while": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": [
             "while"
         ],
@@ -1053,7 +1107,7 @@
         "description": "while loop structure"
     },
     "try:except:else:finally": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": "try",
         "body": [
             "try:",
@@ -1068,7 +1122,7 @@
         "description": "Code Snippet for a try/except/finally with else statement"
     },
     "if __name__ == \"__main__\"": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": "ifmain",
         "body": [
             "if __name__ == \"__main__\":",
@@ -1077,7 +1131,7 @@
         "description": "Create implicitly all the code at the top level using the __name__ special variable"
     },
     "with": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": [
             "with"
         ],
@@ -1088,7 +1142,7 @@
         "description": ""
     },
     "def __init__": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": "definit",
         "body": [
             "def __init__(self, ${1:args}):",
@@ -1099,7 +1153,7 @@
         "description": ""
     },
     "testcase": {
-        "scope": "python",
+        "scope": "python, restructuredtext",
         "prefix": "testcase",
         "body": [
             "class ${1:ExampleCase}(unittest.TestCase):",
@@ -1512,7 +1566,7 @@
     },
     "~~": {
         "scope": "julia,markdown",
-        "prefix": "strike",
+        "prefix": "strikethrough",
         "body": [
             "~~$1~~$0"
         ],
