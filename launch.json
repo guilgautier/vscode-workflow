@@ -9,6 +9,7 @@
             "type": "python",
             // https://code.visualstudio.com/docs/python/testing#_debug-tests
             "request": "launch",
+            // avoid purpose debug-test when tests/subfolders are present
             "purpose": [
                 "debug-test"
             ],
