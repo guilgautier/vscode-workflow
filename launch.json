@@ -7,12 +7,18 @@
         { // https://code.visualstudio.com/docs/python/debugging
             "name": "Debug tests",
             "type": "python",
-            "request": "test", // https://code.visualstudio.com/docs/python/testing#_debug-tests
+            // https://code.visualstudio.com/docs/python/testing#_debug-tests
+            "request": "launch",
+            "purpose": [
+                "debug-test"
+            ],
             "program": "${file}",
-            // "console": "integratedTerminal", // problem with zsh https://github.com/microsoft/vscode-python/issues/10398#issuecomment-597454312
+            "console": "integratedTerminal", // problem with zsh https://github.com/microsoft/vscode-python/issues/10398#issuecomment-597454312
             "justMyCode": true,
             "env": {
-                "PYTEST_ADDOPTS": "--no-cov" // https://stackoverflow.com/a/67185092
+                // when using pytest-cov need to deactivate the coverage
+                // https://stackoverflow.com/a/67185092
+                "PYTEST_ADDOPTS": "--no-cov"
             }
         }
     ]
