@@ -3,6 +3,8 @@
 - [My Visual Studio Code (VSCode) workflow/setup](#my-visual-studio-code-vscode-workflowsetup)
   - [Settings](#settings)
   - [Snippets](#snippets)
+  - [Test and debug code within VSCode](#test-and-debug-code-within-vscode)
+    - [Python](#python)
   - [Extensions](#extensions)
     - [General](#general)
     - [Git-GitHub](#git-github)
@@ -10,7 +12,7 @@
     - [reStructuredText](#restructuredtext)
     - [LaTeX](#latex)
     - [Jupyter notebooks](#jupyter-notebooks)
-    - [Python](#python)
+    - [Python](#python-1)
     - [Julia](#julia)
 
 [Visual Studio Code (VSCode)](https://code.visualstudio.com/) is free, open-source, and there is a huge community developing extensions that will ease your writing and coding experience, and thus improve your productivity.
@@ -47,6 +49,23 @@ For these reasons you may create your own snippets to increase your productivity
 Open the Command Palette ( `CMD + Maj + P` ) and type `Configure User Snippets` , you can then choose to create language-specific snippets or create generic snippets that can be triggered in different scopes.
 
 The file [guilgautier.code-snippets](https://github.com/guilgautier/vscode-workflow/blob/main/guilgautier.code-snippets) contains some snippets I frequently use and find very convenient.
+
+## Test and debug code within VSCode
+
+[General debugging](https://code.visualstudio.com/docs/editor/debugging)
+
+### Python
+
+The configuration file [.vscode/launch.json](.vscode/launch.json) contains two configurations for debugging
+
+1. Python generic
+2. Python test files
+
+For more details, check out the documentation
+
+- [Testing](https://code.visualstudio.com/docs/python/testing),
+- [Debugging](https://code.visualstudio.com/docs/python/debugging),
+- [Debug Tests](https://code.visualstudio.com/docs/python/testing#_debug-tests).
 
 ## Extensions
 
