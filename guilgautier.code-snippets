@@ -931,7 +931,7 @@
         "description": "New property: get and set via decorator https://docs.python.org/3/library/functions.html?#property"
     },
     "def pytest test": {
-        "scope": "python, restructuredtext",
+        "scope": "python",
         "prefix": [
             "pytest",
             "deftest",
@@ -944,12 +944,14 @@
         "description": ""
     },
     "def pytest fixture": {
-        "scope": "python, restructuredtext",
+        "scope": "python",
         "prefix": [
             "pytestfixture",
             "deffixture",
+            "fixture"
         ],
         "body": [
+            "@pytest.fixture",
             "def ${1:fixture_name}():",
             "\treturn True",
             "\t$0"
@@ -1168,6 +1170,104 @@
     // https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html
     // https: //www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#directive-py-module
     // ------------------------ //
+    "header 1 (part)": {
+        "scope": "python,restructuredtext",
+        "prefix": "header1, h1, part-header",
+        "body": [
+            ".. ${2:${1/(\\w*)((\\s+)|(\\$)|(\\{)|(\\})|(\\W|$))/${1:/downcase}${3:+_}/g}}\n",
+            "${1:part-name}",
+            "${1/./#/g}",
+            "\n$0"
+        ],
+        "description": [
+            ".. part-label:\n",
+            "part-name",
+            "######"
+        ]
+    },
+    "header 2 (chapter)": {
+        "scope": "python,restructuredtext",
+        "prefix": "header2, h2, chapter-header",
+        "body": [
+            ".. ${2:${1/(\\w*)((\\s+)|(\\$)|(\\{)|(\\})|(\\W|$))/${1:/downcase}${3:+_}/g}}\n",
+            "${1:chapter-name}",
+            "${1/./*/g}",
+            "\n$0"
+        ],
+        "description": [
+            ".. chapter-label:\n",
+            "chapter-name",
+            "******"
+        ]
+    },
+    "header 3 (section)": {
+        "scope": "python,restructuredtext",
+        "prefix": "header3, h3, section-header",
+        "body": [
+            ".. ${2:${1/(\\w*)((\\s+)|(\\$)|(\\{)|(\\})|(\\W|$))/${1:/downcase}${3:+_}/g}}\n",
+            "${1:section-name}",
+            "${1/./=/g}",
+            "\n$0"
+        ],
+        "description": [
+            ".. section-label:\n",
+            "section-name",
+            "======"
+        ]
+    },
+    "header 4 (subsection)": {
+        "scope": "python,restructuredtext",
+        "prefix": "header4, h4, subsection-header",
+        "body": [
+            ".. ${2:${1/(\\w*)((\\s+)|(\\$)|(\\{)|(\\})|(\\W|$))/${1:/downcase}${3:+_}/g}}\n",
+            "${1:subsection-name}",
+            "${1/./-/g}",
+            "\n$0"
+        ],
+        "description": [
+            ".. subsection-label:\n",
+            "subsection-name",
+            "------"
+        ]
+    },
+    "header 5 (subsubsection)": {
+        "scope": "python,restructuredtext",
+        "prefix": "header5, h5, subsubsection-header",
+        "body": [
+            ".. ${2:${1/(\\w*)((\\s+)|(\\$)|(\\{)|(\\})|(\\W|$))/${1:/downcase}${3:+_}/g}}\n",
+            "${1:subsubsection-name}",
+            "${1/./^/g}",
+            "\n$0"
+        ],
+        "description": [
+            ".. subsubsection-label:\n",
+            "subsubsection-name",
+            "^^^^^^"
+        ]
+    },
+    "header 6 (paragraph)": {
+        "scope": "python,restructuredtext",
+        "prefix": "header6, h6, paragraph-header",
+        "body": [
+            ".. ${2:${1/(\\w*)((\\s+)|(\\$)|(\\{)|(\\})|(\\W|$))/${1:/downcase}${3:+_}/g}}\n",
+            "${1:paragraph-name}",
+            "${1/./\"/g}",
+            "\n$0"
+        ],
+        "description": [
+            ".. paragraph-label:\n",
+            "paragraph-name",
+            "\"\"\"\"\""
+        ]
+    },
+    ".. _label:": {
+        "scope": "python,restructuredtext",
+        "prefix": "label",
+        "body": [
+            ".. _${1:label-name}:",
+        ],
+        "description": ""
+    },
     "``code``": {
         "scope": "python,restructuredtext",
         "prefix": "codeinline",
@@ -1258,7 +1358,7 @@
         "scope": "python,restructuredtext",
         "prefix": "ref",
         "body": [
-            ":ref:`${TM_SELECTED_TEXT}$1 <$2>`$0"
+            ":ref:`${TM_SELECTED_TEXT}${1:replacing-text} <${2:link-label}>`$0"
         ]
     },
     ":numref:": {
@@ -1497,6 +1597,27 @@
             "\n\t${TM_SELECTED_TEXT}$0"
         ],
         "description": ""
+    },
+    // matplotlib.sphinxext.plot_directive
+    // https://matplotlib.org/stable/api/sphinxext_plot_directive_api.html
+    ".. plot::": {
+        "scope": "python,restructuredtext",
+        "prefix": "docplot",
+        "body": [
+            ".. plot:: ${1:path_to_plot_file.py}",
+            "\t:include-source: True",
+            "\t:context: close-figs",
+            "\t:caption: caption",
+            "\t:height: 100px",
+            "\t:width: 200 px / 50% percentage current line width",
+            "\t:scale: 100 %",
+            "\t:alt: alternate text",
+            "\t:align: top/middle/bottom/left/center/right",
+            "\n\t${TM_SELECTED_TEXT}$0"
+        ],
+        "description": [
+            "https://matplotlib.org/stable/api/sphinxext_plot_directive_api.html"
+        ],
     },
     // requires sphinx.ext.doctest in docs/conf.py
     // https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html
