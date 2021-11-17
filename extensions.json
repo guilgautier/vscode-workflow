@@ -35,6 +35,6 @@
         // TOML
         "tamasfe.even-better-toml",
         //Table formatter
-        "shuworks.vscode-table-formatter",
+        "shuworks.vscode-table-formatter"
     ]
 }

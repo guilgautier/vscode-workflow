@@ -4,7 +4,7 @@
   - [Settings](#settings)
   - [Snippets](#snippets)
   - [Test and debug code within VSCode](#test-and-debug-code-within-vscode)
-    - [Python](#python)
+    - [Debug Python](#debug-python)
   - [Extensions](#extensions)
     - [General](#general)
     - [Git-GitHub](#git-github)
@@ -12,7 +12,7 @@
     - [reStructuredText](#restructuredtext)
     - [LaTeX](#latex)
     - [Jupyter notebooks](#jupyter-notebooks)
-    - [Python](#python-1)
+    - [Python](#python)
     - [Julia](#julia)
 
 [Visual Studio Code (VSCode)](https://code.visualstudio.com/) is free, open-source, and there is a huge community developing extensions that will ease your writing and coding experience, and thus improve your productivity.
@@ -54,7 +54,7 @@ The file [guilgautier.code-snippets](https://github.com/guilgautier/vscode-workf
 
 [General debugging](https://code.visualstudio.com/docs/editor/debugging)
 
-### Python
+### Debug Python
 
 The configuration file [.vscode/launch.json](.vscode/launch.json) contains two configurations for debugging
 
@@ -211,6 +211,7 @@ A good [Python](https://www.python.org/) code setup ease your coding experience 
 
 - <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext-pack>
 - <https://marketplace.visualstudio.com/items?itemName=shuworks.vscode-table-formatter>
+
 - <https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml>
 
 ```bash
@@ -221,6 +222,7 @@ code --install-extension KevinRose.vsc-python-indent
 
 code --install-extension lextudio.restructuredtext-pack
 code --install-extension shuworks.vscode-table-formatter
+
 code --install-extension tamasfe.even-better-toml
 ```
 
@@ -232,15 +234,22 @@ A good [Julia](https://julialang.org/) code setup ease your coding experience an
 - <https://marketplace.visualstudio.com/items?itemName=cameronbieganek.julia-color-themes>
 - <https://marketplace.visualstudio.com/items?itemName=singularitti.vscode-julia-formatter>
 
-- <https://marketplace.visualstudio.com/items?itemName=colinfang.markdown-julia>
-- <https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml>
+- <https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one>
+- <https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint>
 - <https://marketplace.visualstudio.com/items?itemName=shuworks.vscode-table-formatter>
+- <https://marketplace.visualstudio.com/items?itemName=colinfang.markdown-julia>
+
+- <https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml>
 
 ```bash
 code --install-extension julialang.language-julia
 code --install-extension cameronbieganek.julia-color-themes
 code --install-extension singularitti.vscode-julia-formatter
 
+code --install-extension yzhang.markdown-all-in-one
+code --install-extension DavidAnson.vscode-markdownlint
+code --install-extension shuworks.vscode-table-formatter
 code --install-extension colinfang.markdown-julia
+
 code --install-extension tamasfe.even-better-toml
 ```
