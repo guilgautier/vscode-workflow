@@ -7,6 +7,23 @@
     "tasks": [
         // Julia
         {
+            "label": "Julia - Format",
+            "type": "shell",
+            "command": "julia",
+            "args": [
+                "-e",
+                "'using JuliaFormatter; println(JuliaFormatter.format(\".\"))'"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
             "label": "Julia - Test",
             "type": "shell",
             "command": "julia",
@@ -15,7 +32,7 @@
                 // "${workspaceFolder}/test/runtests.jl",
                 "--project=${workspaceFolder}",
                 "-e",
-                "'using Pkg; Pkg.test()'",
+                "'using Pkg; Pkg.test()'"
             ],
             "group": {
                 "kind": "test",
