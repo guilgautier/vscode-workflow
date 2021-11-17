@@ -8,7 +8,8 @@
     "workbench.colorTheme": "Julia (Monokai Classic)",
     "workbench.activityBar.visible": true,
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
+        "*.ipynb": "jupyter-notebook",
+        "*.pdf": "latex-workshop-pdf-hook"
     },
     "workbench.sideBar.location": "right",
     "workbench.statusBar.visible": true,
@@ -19,7 +20,7 @@
     "files.trimTrailingWhitespace": true,
     // Editor
     "editor.codeActionsOnSave": {
-        "source.fixAll.markdownlint": true
+        "source.organizeImports": true
     },
     "editor.detectIndentation": true,
     "editor.fontSize": 13,
@@ -57,6 +58,11 @@
     "latex-workshop.bibtex-fields.sort.enabled": true,
     // Julia https://github.com/invenia/BlueStyle#code-formatting
     "[julia]": {
+        // https://github.com/invenia/BlueStyle#vs-code-settings
+        "editor.defaultFormatter": "singularitti.vscode-julia-formatter",
+        "editor.detectIndentation": false,
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true,
         "editor.tabSize": 4,
         "editor.wordWrapColumn": 92,
         "editor.rulers": [
@@ -68,18 +74,28 @@
             {
                 "column": 120,
                 "color": "#ff0000"
-            },
+            }
         ],
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true
     },
+    "juliaFormatter.style": "blue",
+    "juliaFormatter.formatDocstrings": true,
     "julia.execution.codeInREPL": true,
     "julia.enableTelemetry": true,
     "julia.environmentPath": "",
-    "julia.format.keywords": null,
     "julia.enableCrashReporter": true,
     "julia.additionalArgs": [],
     // Python
     "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "editor.formatOnSave": true,
         "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.wordWrapColumn": 80,
         "editor.rulers": [
             {
                 "column": 80,
@@ -89,33 +105,42 @@
             {
                 "column": 120,
                 "color": "#ff0000"
-            },
-        ],
-        "editor.tabSize": 4,
-        "editor.wordWrapColumn": 80,
+            }
+        ]
     },
     "python.languageServer": "Pylance",
-    "python.condaPath": "~/opt/anaconda3/bin/anaconda",
+    "python.analysis.typeCheckingMode": "basic", // "off", "basic", "strict"
+    "python.analysis.diagnosticMode": "workspace", // if you have some RAM to spare
+    "python.pythonPath": "${workspaceFolder}/.venv/bin/python",
+    "python.condaPath": "${env:HOME}/opt/anaconda3/bin/anaconda",
+    "python.poetryPath": "${env:HOME}/.poetry/bin/poetry",
     "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
     "python.formatting.provider": "black",
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
     "python.terminal.activateEnvironment": false,
-    // add sphinx.ext.napoleon to conf.py shttps://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
-    "autoDocstring.docstringFormat": "google",
-    "autoDocstring.includeExtendedSummary": true,
     "pythonIndent.trimLinesWithOnlyWhitespace": true,
+    "autoDocstring.includeExtendedSummary": true,
     // Markdown
     "[markdown]": {
         "editor.tabSize": 2,
         "editor.quickSuggestions": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.markdownlint": true
+        }
     },
     // RestructuredText
+    "restructuredtext.builtDocumentationPath": "${workspaceFolder}/docs/_build/html",
     "restructuredtext.confPath": "${workspaceFolder}/docs",
+    "restructuredtext.languageServer.disabled": false,
     // TOML
     "[toml]": {
         "editor.defaultFormatter": "tamasfe.even-better-toml"
     },
+    // GitHub Pull requests and Issues
+    "githubPullRequests.fileListLayout": "flat",
+    "diffEditor.renderSideBySide": false,
+    // Spell checker
     "cSpell.enabled": true,
-    "cSpell.language": "en,fr",
+    "cSpell.language": "en,fr"
 }
