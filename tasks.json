@@ -1,4 +1,4 @@
-// CMD+Maj+P or View->Command palette->Tasks: Open User Tasks
+// CMD+Shift+P or View->Command palette->Tasks: Open User Tasks
 // An opinionated list of VS Code tasks used by Guillaume Gautier guilgautier https://guilgautier.github.io/
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558

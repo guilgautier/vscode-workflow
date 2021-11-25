@@ -1,10 +1,14 @@
 # My Visual Studio Code (VSCode) workflow/setup
 
 - [My Visual Studio Code (VSCode) workflow/setup](#my-visual-studio-code-vscode-workflowsetup)
+  - [Install the `code` shell command](#install-the-code-shell-command)
+  - [Two levels of configuration](#two-levels-of-configuration)
+    - [Settings synchronization](#settings-synchronization)
   - [Settings](#settings)
   - [Snippets](#snippets)
   - [Test and debug code within VSCode](#test-and-debug-code-within-vscode)
     - [Debug Python](#debug-python)
+  - [Tasks](#tasks)
   - [Extensions](#extensions)
     - [General](#general)
     - [Git-GitHub](#git-github)
@@ -17,26 +21,36 @@
 
 [Visual Studio Code (VSCode)](https://code.visualstudio.com/) is free, open-source, and there is a huge community developing extensions that will ease your writing and coding experience, and thus improve your productivity.
 
-On a per project basis you can place the files or copy/paste some bits of the files
+## Install the `code` shell command
 
-- [settings.json](https://github.com/guilgautier/vscode-workflow/blob/main/settings.json)
-- [guilgautier.code-snippets](https://github.com/guilgautier/vscode-workflow/blob/main/guilgautier.code-snippets)
-- [extensions.json](https://github.com/guilgautier/vscode-workflow/blob/main/extensions.json)
+The `code` shell command allows you to open a file with VSCode, install an extension, etc. from the command line.
 
-in the [`.vscode`](./.vscode) folder at the root of your project.
+To make the `code` command available in your shell, open the Command Palette (`CMD + Shift + P`) and type `shell command`, see also [Launching from the command line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line).
 
-You can also define your setup global as described in each sections.
+## Two levels of configuration
+
+1. On a per project basis, at the root of your project/workspace, the `.vscode` folder contains some local VSCode configuration files like
+
+   - [extensions.json](./extensions.json),
+   - [launch.json](./launch.json),
+   - [settings.json](./settings.json),
+   - [tasks.json](./tasks.json),
+   - [guilgautier.code-snippets](./guilgautier.code-snippets).
+
+2. VSCode can be configured globally at the user level as described in the following sections.
+
+### Settings synchronization
+
+You may also consider [synchronizing your settings](https://code.visualstudio.com/docs/editor/settings-sync), in order to keep the same setup each time you log in VS Code (from a different machine for example).
 
 ## Settings
 
 > [VSCode settings](https://code.visualstudio.com/docs/getstarted/settings) You can configure Visual Studio Code to your liking through its various settings. Nearly every part of VS Code's editor, user interface, and functional behavior has options you can modify.
 
-To edit your personal settings, open the Command Palette ( `CMD + Maj + P` ) and type `Open Settings (JSON)` .
+To edit your personal settings, open the Command Palette (`CMD + Shift + P`) and type `Open Settings (JSON)`.
 
-The file [settings.json](https://github.com/guilgautier/vscode-workflow/blob/main/settings.json) contains my favorite settings.
-**Note:** Some settings only correspond to corresponding [Extensions](#extensions) suggested below.
-
-You may also consider [synchronizing your settings](https://code.visualstudio.com/docs/editor/settings-sync), in order to keep the same setup each time you log in VS Code (from a different machine for example).
+The file [settings.json](./settings.json) contains my favorite settings.
+**Note:** Some settings only apply to some [extensions](#extensions) suggested below.
 
 ## Snippets
 
@@ -44,11 +58,17 @@ You may also consider [synchronizing your settings](https://code.visualstudio.co
 
 Many language-specific [extensions](#extensions) already provide some useful snippets.
 While some of them exactly match your needs, some others might be missing or you may not remember how to trigger them.
-
 For these reasons you may create your own snippets to increase your productivity.
-Open the Command Palette ( `CMD + Maj + P` ) and type `Configure User Snippets` , you can then choose to create language-specific snippets or create generic snippets that can be triggered in different scopes.
 
-The file [guilgautier.code-snippets](https://github.com/guilgautier/vscode-workflow/blob/main/guilgautier.code-snippets) contains some snippets I frequently use and find very convenient.
+To create your personal snippets, open the Command Palette (`CMD + Shift + P`) and type `Configure User Snippets`.
+You can then choose to create:
+
+- language-specific snippets, or
+- generic snippets,
+
+that can be triggered within different scopes (python, julia, markdown, ect.).
+
+The file [guilgautier.code-snippets](./guilgautier.code-snippets) contains some snippets I frequently use and find super convenient.
 
 ## Test and debug code within VSCode
 
@@ -56,27 +76,39 @@ The file [guilgautier.code-snippets](https://github.com/guilgautier/vscode-workf
 
 ### Debug Python
 
-The configuration file [.vscode/launch.json](.vscode/launch.json) contains two configurations for debugging
+The [.vscode/launch.json](launch.json) file contains two configurations for debugging
 
-1. Python generic
-2. Python test files
+1. Python generic `.py` files,
+2. Python test files `tests/test_XXX.py`.
 
-For more details, check out the documentation
+For more details, check out the documentation:
 
 - [Testing](https://code.visualstudio.com/docs/python/testing),
 - [Debugging](https://code.visualstudio.com/docs/python/debugging),
 - [Debug Tests](https://code.visualstudio.com/docs/python/testing#_debug-tests).
 
+## Tasks
+
+> Lots of tools exist to automate [tasks](https://code.visualstudio.com/docs/editor/tasks) like linting, building, packaging, testing, or deploying software systems.
+
+To create your personal tasks, open the Command Palette (`CMD + Shift + P`) and type `Tasks: Open User Tasks`,
+
+The [`tasks.json`](./tasks.json) file contains some tasks I frequently use and find super convenient, like building the documentation of my Python/Julia project, running tests, etc.
+This file can be thought of as the VSCode counter part of a Makefile.
+
+To run your favorite task open the Command Palette (`CMD + Shift + P`) and type `Tasks: Run Task`.
+Tasks defined as `"kind": "build"`, can be run simply using `CMD + Shift + B`.
+
 ## Extensions
 
-The file [extensions.json](https://github.com/guilgautier/vscode-workflow/blob/main/extensions.json) contains a suggestive list of VSCode extensions that greatly simplify my writing/coding workflow and improve my productivity.
+The file [extensions.json](./extensions.json) contains a suggestive list of VSCode extensions that greatly simplify my writing/coding workflow and improve my productivity.
 
 All registered extensions are available on [VSCode's Marketplace](https://marketplace.visualstudio.com/vscode).
 Extensions can also be installed locally from your VSCode window, see the [documentation](https://code.visualstudio.com/docs/editor/extension-marketplace).
 
 To install the the extensions listed and detailed in the next sections you can execute the following code block in your Terminal.
 
-**Make sure you have the `code` CLI installed, see [Launching from the command line](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line).**
+Make sure you have [installed the `code` shell command](#install-the-code-shell-command).
 
 ```bash
   code --install-extension <extension-name>
@@ -121,7 +153,7 @@ code --install-extension redhat.vscode-yaml
 
 ### Markdown
 
-[Markdown](https://en.wikipedia.org/wiki/Markdown) is a simple and lightweight markup language ( `.md` files) that you may use to
+[Markdown](https://en.wikipedia.org/wiki/Markdown) is a simple and lightweight markup language (`.md` files) that you may use to
 
 - take notes
 - write documentation
@@ -146,7 +178,7 @@ code --install-extension shuworks.vscode-table-formatter
 
 ### reStructuredText
 
-[reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) is a markup language ( `.rst` files) that you may use to
+[reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) is a markup language (`.rst` files) that you may use to
 
 - take notes
 - write documentation

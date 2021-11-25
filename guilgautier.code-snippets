@@ -1,4 +1,4 @@
-// CMD+Maj+P or View->Command palette->Preferences: Configure User Snippets
+// CMD+Shift+P or View->Command palette->Preferences: Configure User Snippets
 // An opinionated list of VS Code snippets used by Guillaume Gautier guilgautier https://guilgautier.github.io/
 {
     // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
