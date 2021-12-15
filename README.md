@@ -118,7 +118,6 @@ Make sure you have [installed the `code` shell command](#install-the-code-shell-
 
 - <https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode>
 - <https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense>
-- <https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2>
 - <https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments>
 - <https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker>
 - <https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-french>
@@ -127,7 +126,6 @@ Make sure you have [installed the `code` shell command](#install-the-code-shell-
 ```bash
 code --install-extension VisualStudioExptTeam.vscodeintellicode
 code --install-extension christian-kohler.path-intellisense
-code --install-extension CoenraadS.bracket-pair-colorizer-2
 code --install-extension aaron-bond.better-comments
 code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension streetsidesoftware.code-spell-checker-french
